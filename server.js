@@ -28,6 +28,11 @@ mongoose.connection.once("open", () => {
 })
 
 
+//ROUTES
+app.use(require("./routes/signInRoute"));
+app.use(require("./routes/logInRoute"));
+
+
 
 
 const PORT = process.env.PORT || 3000;
