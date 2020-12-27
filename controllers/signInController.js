@@ -22,6 +22,9 @@ exports.signin = async (req, res) => {
         throw "La password deve contenere almeno un numero e contenere caratteri maiuscoli e minuscoli";
 
 
-    const user = new User({username, email, password});
+    const user = new User({username, email, password: sha256(password + process.env.SALT)}); //<-- Secure authentication
     await user.save();
+    res.json({
+        message: "Registrazione completata"
+    })
 }
