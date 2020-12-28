@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const User = mongoose.model("User");
 const sha256 = require("js-sha256");
 
+
 exports.signin = async (req, res) => {
     
     const {username, email, password} = req.body;

@@ -29,13 +29,13 @@ mongoose.connection.once("open", () => {
 
 
 //ROUTES
-app.use(require("./routes/signInRoute"));
-app.use(require("./routes/logInRoute"));
+app.use("/signin", require("./routes/signInRoute"));
+app.use("/login", require("./routes/logInRoute"));
 
 
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;  //<-- PORT
 
 app.listen(PORT, () => {
     console.log("Server started on port " + PORT);
