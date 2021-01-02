@@ -33,7 +33,7 @@ mongoose.connection.once("open", () => {
 //ROUTES
 app.use("/signin", require("./routes/signInRoute"));
 app.use("/login", require("./routes/logInRoute"));
-
+app.use("/conversation", require("./routes/conversationRoute"));
 
 
 
