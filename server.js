@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 //EXPRESS
 const express = require("express");
 const app=express();
@@ -14,7 +16,7 @@ require("./models/Message");
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/ChatApp' , {  //<--DB
+mongoose.connect('mongodb://localhost/chatapp' , {  //<--DB
     useUnifiedTopology: true,
     useNewUrlParser: true,
 });  
@@ -35,8 +37,11 @@ app.use("/login", require("./routes/logInRoute"));
 
 
 
-const PORT = process.env.PORT || 3000;  //<-- PORT
+const PORT = /*process.env.PORT ||*/ 3000;  //<-- PORT
 
 app.listen(PORT, () => {
     console.log("Server started on port " + PORT);
 })
+
+module.exports = app;
+

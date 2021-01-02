@@ -14,12 +14,11 @@ exports.signin = async (req, res) => {
     //8 to 20 characters, at least one number, one uppercase, and lowercase letter
     const passwordVerifyRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
 
-    if (emailVerifyRegex.test(email)) 
-        throw "Inserire un indirizzo mail valido";
+    if (!emailVerifyRegex.test(email)) throw "Inserire un indirizzo mail valido";
 
     if (password.lenght < 8)
         throw "La password deve essere di almeno 8 caratteri";
-    if (passwordVerifyRegex.test(password))
+    if (!passwordVerifyRegex.test(password))
         throw "La password deve contenere almeno un numero e contenere caratteri maiuscoli e minuscoli";
 
 
