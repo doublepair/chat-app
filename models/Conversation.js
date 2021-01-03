@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 
 const conversationSchema = new Schema({
 
-    username: {
+    name: {
         type: String,
-        required: "Inserire il nome utente"
+        required: "Inserire il nome conversazione"
     }
 
 })
